@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drip Coffee POS</title>
+<link rel="icon" href="drip-mark.png">
+<link rel="stylesheet" href="pos.css">
+</head>
+<body>
+<header>
+  <div class="brand"><img src="drip-mark.png" alt=""><b>Drip Coffee POS</b></div>
+  <div class="hbtns"><button id="btnReport">Sales report</button></div>
+</header>
+<main>
+  <section class="left">
+    <input id="search" type="search" placeholder="Search items…" autocomplete="off">
+    <div id="chips" class="chips"></div>
+    <div id="items" class="items"></div>
+  </section>
+  <aside class="cart">
+    <div class="row between"><h2>Order <span id="orderNo"></span></h2><button id="btnClear" class="ghost">Clear</button></div>
+    <div class="seg" id="type"><button class="on">Dine-in</button><button>Takeout</button></div>
+    <div id="lines" class="lines"></div>
+    <div class="total row between"><span>Total</span><b id="total">₱0</b></div>
+    <div class="seg" id="pay"><button class="on">Cash</button><button>GCash</button><button>Card</button></div>
+    <div id="cashBox"><label>Cash received<input id="cash" type="number" inputmode="decimal" min="0" placeholder="0"></label>
+      <div class="quick" id="quick"></div>
+      <div class="row between change"><span>Change</span><b id="change">₱0</b></div></div>
+    <button id="btnCharge" class="primary" disabled>Charge</button>
+  </aside>
+</main>
+
+<dialog id="dSize"><h3 id="sizeName"></h3><div id="sizeBtns" class="sizeBtns"></div><button class="ghost" data-close>Cancel</button></dialog>
+<dialog id="dReceipt"><div id="receipt" class="receipt"></div><div class="row"><button class="primary" id="btnPrint">Print</button><button class="ghost" data-close>New order</button></div></dialog>
+<dialog id="dReport"><div id="report"></div><div class="row"><button id="btnCsv">Export CSV</button><button class="danger" id="btnWipe">Delete all sales</button><button class="ghost" data-close>Close</button></div></dialog>
+<script src="menu.js"></script>
+<script src="pos.js"></script>
+</body>
+</html>
